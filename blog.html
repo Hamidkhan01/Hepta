@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog | Hepta Travel & Tours</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    .hero {
+      background: url('/images/001.jpg') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .sidebar {
+      flex: 1 1 250px;
+      max-width: 250px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      height: fit-content;
+      position: sticky;
+      top: 30px;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h3 {
+      font-size: 1.3em;
+      color: #007bff;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 12px;
+    }
+
+    .sidebar ul li a {
+      color: #444;
+      text-decoration: none;
+      font-size: 0.95em;
+      transition: all 0.2s ease;
+    }
+
+    .sidebar ul li a:hover {
+      color: #007bff;
+      padding-left: 5px;
+    }
+
+    .back-home {
+      margin-top: 30px;
+      text-align: center;
+      padding: 10px 25px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    .back-home:hover {
+      background: #0056b3;
+    }
+
+    .blog-posts {
+      flex: 1 1 65%;
+      display: grid;
+      gap: 30px;
+    }
+
+    .blog-post {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      cursor: pointer;
+      scroll-margin-top: 100px;
+    }
+
+    .blog-post img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .blog-post .content {
+      padding: 20px;
+    }
+
+    .blog-post .content h2 {
+      font-size: 1.5em;
+      color: #007bff;
+      margin-bottom: 8px;
+    }
+
+    .blog-post .content p {
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      max-width: 700px;
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 500px; /* Updated to allow more space for larger images */
+      object-fit: contain; /* Ensures image fits properly inside modal */
+      border-radius: 10px;
+    }
+
+    .modal-content h2 {
+      margin-top: 20px;
+      color: #007bff;
+    }
+
+    .modal-content p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    @media (max-width: 992px) {
+      .main-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .sidebar {
+        max-width: 100%;
+        position: relative;
+      }
+
+      .blog-posts {
+        width: 100%;
+      }
+
+      .modal-content {
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Travel Blogs</h1>
+  </div>
+
+  <div class="main-content">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <h3>Recent Blogs</h3>
+        <ul>
+          <li><a href="#blog1">Discover the Beauty of Swat</a></li>
+          <li><a href="#blog2">Top 5 Weekend Getaways</a></li>
+          <li><a href="#blog3">A Day in Murree</a></li>
+          <li><a href="#blog4">Hunza Adventures</a></li>
+          <li><a href="#blog5">Skardu in Winter</a></li>
+        </ul>
+      </div>
+      <a href="index.html" class="back-home">← Back to Home</a>
+    </aside>
+
+    <!-- Blog Posts -->
+    <div class="blog-posts">
+      <div id="blog1" class="blog-post" onclick="openModal('Discover the Beauty of Swat', '/images/swat.jpg', 'Swat Valley is a stunning destination...')">
+        <img src="/images/swat.jpg" alt="Swat Valley">
+        <div class="content">
+          <h2>Discover the Beauty of Swat</h2>
+          <p>February 26, 2025 - Free Travel Tips by Hepta</p>
+        </div>
+      </div>
+
+      <div id="blog2" class="blog-post" onclick="openModal('Top 5 Weekend Getaways', '/images/isl2.jpg', 'Explore our top 5 picks for short refreshing trips near Islamabad. From the serene trails of Pir Sohawa to the historical charm of Taxila and the peaceful lakeside at Khanpur, each destination offers a unique escape. These weekend spots are perfect for families, couples, and solo travelers looking to relax and reconnect with nature. Discover where you should go next with our expert travel tips and suggested itineraries for a memorable weekend adventure!')">
+        <img src="/images/isl2.jpg" alt="Weekend Getaways">
+        <div class="content">
+          <h2>Top 5 Weekend Getaways</h2>
+          <p>February 27, 2025 - Travel Guides</p>
+        </div>
+      </div>
+
+      <div id="blog3" class="blog-post" onclick="openModal('A Day in Murree', '/images/murree1.jpg', 'Murree is perfect for a quick escape. Let us show you the best spots.')">
+        <img src="/images/murree1.jpg" alt="Murree">
+        <div class="content">
+          <h2>A Day in Murree</h2>
+          <p>March 2, 2025 - Nature Escapes</p>
+        </div>
+      </div>
+
+      <div id="blog4" class="blog-post" onclick="openModal('Hunza Adventures', '/images/hunza.jpg', 'Adventure through Hunza, where culture and landscapes meet.')">
+        <img src="/images/hunza.jpg" alt="Hunza">
+        <div class="content">
+          <h2>Hunza Adventures</h2>
+          <p>March 5, 2025 - Adventure Series</p>
+        </div>
+      </div>
+
+      <div id="blog5" class="blog-post" onclick="openModal('Skardu in Winter', '/images/skardu3.jpg', 'Experience the magic of Skardu under the snow.')">
+        <img src="/images/skardu3.jpg" alt="Skardu">
+        <div class="content">
+          <h2>Skardu in Winter</h2>
+          <p>March 10, 2025 - Winter Wonders</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="Blog Image">
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, image, text) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalImage').src = image;
+      document.getElementById('modalText').innerHTML = text; // Use innerHTML instead of textContent for multi-line text
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Close modal if user clicks outside of it
+    window.onclick = function (event) {
+      if (event.target === document.getElementById('modal')) {
+        closeModal();
+      }
+    };
+  </script>
+
+</body>
+</html>

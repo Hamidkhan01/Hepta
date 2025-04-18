@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us | Hepta Travel & Tours</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: lightseagreen;
+    }
+
+    .hero-image {
+      background: url('/images/001.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-image h1 {
+      font-size: 3.5em;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .container h2 {
+      color: black;
+      margin-bottom: 20px;
+      font-size: 2.2em;
+    }
+
+    .container p {
+      color: #555;
+      font-size: 1.1em;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    .team-section {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .team-title {
+      font-size: 2.4em;
+      margin-bottom: 40px;
+      color: #007bff;
+    }
+
+    .team-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: nowrap;
+    }
+
+    .team-member {
+      flex: 1;
+      background: #e0f7fa;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+    }
+
+    .team-member img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid rgb(10, 10, 10);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+    .team-member h3 {
+      margin: 10px 0 5px;
+      font-size: 1.4em;
+      color: #222;
+    }
+
+    .team-member .role {
+      font-size: 1em;
+      color: #007bff;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .team-member p {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 25px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .back-home:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 992px) {
+      .team-grid {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      .team-member {
+        min-width: 300px;
+        flex-shrink: 0;
+      }
+
+      .container p {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="hero-image">
+    <h1>About Hepta</h1>
+  </div>
+
+  <div class="container">
+    <h2>Travel & Tours</h2>
+    <p>
+      Hepta Travel & Tours is your trusted partner in discovering the world. We believe in making travel joyful,
+      affordable, and memorable. Our expert team is dedicated to providing top-notch travel planning services, 
+      from hotel bookings to guided tours.
+    </p>
+    <p>
+      Whether you're planning a solo escape, a family holiday, or a corporate retreat, we’ve got you covered. 
+      Join us to turn your travel dreams into reality.
+    </p>
+
+    <section class="team-section">
+      <h2 class="team-title">Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="/images/h003.jfif" alt="Ali Khan">
+          <h3>Hamid Khan</h3>
+          <p class="role">Founder & CEO</p>
+          <p>Ali leads Hepta with a vision to explore the world through unique, unforgettable tours.</p>
+        </div>
+        <div class="team-member">
+          <img src="/images/ct5.jpg" alt="Sara Ahmed">
+          <h3>Sara Ahmed</h3>
+          <p class="role">Tour Manager</p>
+          <p>Expert in curating smooth, exciting travel experiences for groups and individuals alike.</p>
+        </div>
+        <div class="team-member">
+          <img src="/images/ct6 (2).jpg" alt="Usman Tariq">
+          <h3>Usman Tariq</h3>
+          <p class="role">Travel Consultant</p>
+          <p>Helps clients pick perfect destinations and travel plans with expert knowledge and care.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html#top" class="back-home">← Back to Home</a>
+  </div>
+
+</body>
+</html>
