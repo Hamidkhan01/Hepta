@@ -10,8 +10,6 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #ffffff);
       color: #333;
-      max-width: 100%;
-      overflow-x: hidden;
     }
 
     .hero {
@@ -23,8 +21,16 @@
       color: white;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
       position: relative;
-      background-attachment: fixed;
     }
+
+    html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  background-attachment: fixed;
+}
 
     .hero::before {
       content: '';
@@ -38,7 +44,7 @@
     }
 
     .hero h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       margin: 0;
       z-index: 2;
       text-align: center;
@@ -161,42 +167,44 @@
     }
 
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px 15px;
-        margin-top: -20px;
-      }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 15px;
+    margin-top: -20px;
+  }
 
-      .form-container,
-      .contact-info {
-        width: 100%;
-        max-width: 500px;
-        padding: 25px 20px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      }
+  .form-container,
+  .contact-info {
+    width: 100%;
+    max-width: 500px;
+    padding: 25px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
 
-      .form-container input,
-      .form-container textarea,
-      .form-container button {
-        font-size: 1em;
-        padding: 12px;
-      }
+  .form-container input,
+  .form-container textarea,
+  .form-container button {
+    font-size: 1.1em;
+    padding: 14px;
+  }
 
-      .form-container h2,
-      .contact-info h3 {
-        font-size: 1.3em;
-        text-align: center;
-      }
+  .form-container h2,
+  .contact-info h3 {
+    font-size: 1.3em;
+    text-align: center;
+  }
 
-      .back-home {
-        font-size: 1em;
-        width: 100%;
-        margin-top: 15px;
-        text-align: center;
-      }
-    }
+  .back-home {
+    font-size: 1em;
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+
   </style>
 </head>
 <body>
