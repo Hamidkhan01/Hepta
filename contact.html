@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Hepta Travel & Tours</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #ffffff);
       color: #333;
+      overflow-x: hidden;
     }
 
     .hero {
@@ -21,16 +23,8 @@
       color: white;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
       position: relative;
+      background-attachment: fixed;
     }
-
-    html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.hero {
-  background-attachment: fixed;
-}
 
     .hero::before {
       content: '';
@@ -63,21 +57,30 @@
       flex-wrap: wrap;
     }
 
-    .form-container {
-      background: #ffffff;
+    .form-container,
+    .contact-info {
+      background: #fff;
       padding: 40px;
       border-radius: 15px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      flex: 1.2;
-      min-width: 320px;
-      position: relative;
       z-index: 2;
+      min-width: 280px;
+    }
+
+    .form-container {
+      flex: 1.2;
     }
 
     .form-container h2 {
-      color: #2d3436;
       text-align: center;
       margin-bottom: 20px;
+      color: #2d3436;
+    }
+
+    .form-container label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
     }
 
     .form-container input,
@@ -85,27 +88,11 @@
     .form-container button {
       width: 100%;
       padding: 14px;
-      margin: 10px 0;
+      margin-top: 8px;
       border-radius: 8px;
-      font-size: 1.1em;
-    }
-
-    .form-container input,
-    .form-container textarea {
+      font-size: 1em;
       border: 1px solid #ccc;
       box-sizing: border-box;
-    }
-
-    .form-container button {
-      background: #00aaff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .form-container button:hover {
-      background: #008f8f;
     }
 
     .form-container input:focus,
@@ -114,114 +101,128 @@
       outline: none;
     }
 
+    .form-container button {
+      background: #00aaff;
+      color: #fff;
+      border: none;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background: #008f8f;
+    }
+
     .error-message {
       color: red;
       font-size: 0.9em;
-      margin-top: -10px;
-      margin-bottom: 10px;
+      margin-top: 5px;
     }
 
     .contact-info {
-      background: #ffffff;
-      padding: 20px 25px;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      flex: 0.7;
-      min-width: 250px;
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      flex: 0.8;
     }
 
     .contact-info h3 {
       color: #00aaff;
-      text-align: center;
-      margin-bottom: 15px;
       font-size: 1.5em;
-      width: 100%;
+      margin-bottom: 15px;
     }
 
     .contact-info p {
-      margin: 8px 0;
-      font-size: 1em;
+      margin: 10px 0;
       color: #555;
-      line-height: 1.6em;
+      line-height: 1.6;
     }
 
     .back-home {
-      align-self: center;
+      display: inline-block;
       margin-top: 20px;
-      padding: 12px 30px;
+      padding: 12px 25px;
       background: #00aaff;
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      font-size: 1.1em;
-      transition: background 0.3s ease;
+      font-size: 1em;
+      transition: background 0.3s;
     }
 
     .back-home:hover {
       background: #008f8f;
     }
 
+    /* Success Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      color: #00aaff;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 15px;
-    margin-top: -20px;
-  }
+      .container {
+        flex-direction: column;
+        margin-top: -20px;
+        gap: 20px;
+      }
 
-  .form-container,
-  .contact-info {
-    width: 100%;
-    max-width: 500px;
-    padding: 25px 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  }
+      .form-container,
+      .contact-info {
+        width: 100%;
+        max-width: 500px;
+        padding: 25px 20px;
+      }
 
-  .form-container input,
-  .form-container textarea,
-  .form-container button {
-    font-size: 1.1em;
-    padding: 14px;
-  }
-
-  .form-container h2,
-  .contact-info h3 {
-    font-size: 1.3em;
-    text-align: center;
-  }
-
-  .back-home {
-    font-size: 1em;
-    width: 100%;
-    margin-top: 15px;
-    text-align: center;
-  }
-}
-
-
+      .hero h1 {
+        font-size: 2em;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="hero">
-    <h1>Contact Us</h1>
+    <h1 data-aos="fade-down">Contact Us</h1>
   </div>
 
   <div class="container">
-    <div class="form-container">
+    <div class="form-container" data-aos="fade-right">
       <h2>Send Us a Message</h2>
-      <form id="contactForm" method="POST" onsubmit="return validateForm()">
+      <form id="contactForm" onsubmit="return validateForm(event)">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your full name" required />
 
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="^\+?\d{1,4}[\s\-]?\(?\d{1,3}?\)?[\s\-]?\d{1,3}[\s\-]?\d{1,4}$" required />
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
         <div class="error-message" id="phoneError"></div>
 
         <label for="email">Email Address</label>
@@ -235,9 +236,9 @@
       </form>
     </div>
 
-    <div class="contact-info">
+    <div class="contact-info" data-aos="fade-left">
       <h3>Our Contact Info</h3>
-      <p><strong>Address:</strong><br>Saddar, Rawalpindi<br>Pakistan</p>
+      <p><strong>Address:</strong><br>Saddar, Rawalpindi, Pakistan</p>
       <p><strong>Phone:</strong><br>(+92) 318 1813297</p>
       <p><strong>Email:</strong><br>mrh20084@gmail.com</p>
 
@@ -245,7 +246,67 @@
     </div>
   </div>
 
-  <script src="js/script.js"></script>
+  <!-- Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <h3>Thank you!</h3>
+      <p>Your message has been sent successfully.</p>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function validateForm(e) {
+      e.preventDefault();
+
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const phoneError = document.getElementById("phoneError");
+      const emailError = document.getElementById("emailError");
+
+      phoneError.textContent = "";
+      emailError.textContent = "";
+
+      const phonePattern = /^\+?\d{10,15}$/;
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/i;
+
+      let valid = true;
+
+      if (!phonePattern.test(phone)) {
+        phoneError.textContent = "Invalid phone number";
+        valid = false;
+      }
+
+      if (!emailPattern.test(email)) {
+        emailError.textContent = "Invalid email address";
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById("contactForm").reset();
+        showModal();
+      }
+
+      return false;
+    }
+
+    function showModal() {
+      document.getElementById("successModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("successModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("successModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
 </body>
 </html>
