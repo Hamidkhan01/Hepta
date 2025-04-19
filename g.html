@@ -58,30 +58,11 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
     }
 
     .gallery-grid img:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .gallery-grid img::after {
-      content: "\1F50D";
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 22px;
-      background: rgba(255, 255, 255, 0.7);
-      color: #007bff;
-      padding: 4px;
-      border-radius: 50%;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .gallery-grid img:hover::after {
-      opacity: 1;
     }
 
     .back-home {
@@ -199,22 +180,18 @@
     <img id="lightbox-img" src="" alt="Full Image">
   </div>
 
-  <!-- Inline JavaScript -->
   <script>
+    // Open Lightbox
     function openLightbox(src) {
-      document.getElementById("lightbox-img").src = src;
-      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById('lightbox').style.display = 'flex';
+      document.getElementById('lightbox-img').src = src;
     }
 
+    // Close Lightbox
     function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-      document.getElementById("lightbox-img").src = "";
+      document.getElementById('lightbox').style.display = 'none';
     }
-
-    // Close when clicking outside the image
-    document.getElementById("lightbox").addEventListener("click", function (e) {
-      if (e.target === this) closeLightbox();
-    });
   </script>
+
 </body>
 </html>
