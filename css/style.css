@@ -164,19 +164,6 @@ html {
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    flex-direction: column;
-  }
-
-  .image-box {
-    max-height: none;
-  }
-
-  .image-box img {
-    object-fit: contain;
-  }
-}
 
 
 /* Text box */
