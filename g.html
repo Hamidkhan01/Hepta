@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery | Hepta Travel & Tours</title>
-  <base href="/Hepta/"> <!-- 🔥 Add this base tag -->
+  <base href="/Hepta/">
   <style>
     body {
       margin: 0;
@@ -13,7 +13,7 @@
     }
 
     .hero {
-      background: url('/Hepta/images/001.jpg') no-repeat center center/cover; /* Updated path */
+      background: url('/Hepta/images/001.jpg') no-repeat center center/cover;
       height: 250px;
       display: flex;
       align-items: center;
@@ -176,15 +176,27 @@
   </section>
 
   <!-- Lightbox Overlays -->
-  <div id="img1" class="lightbox"><a href="#" class="close-lightbox">&times;</a><img src="images/ct5.jpg" alt="Gallery 1 Full"></div> <!-- Updated path -->
-  <div id="img2" class="lightbox"><a href="#" class="close-lightbox">&times;</a><img src="images/b01 (1).jpg" alt="Gallery 2 Full"></div> <!-- Updated path -->
-  <div id="img3" class="lightbox"><a href="#" class="close-lightbox">&times;</a><img src="images/b01 (2).jpg" alt="Gallery 3 Full"></div> <!-- Updated path -->
-  <div id="img4" class="lightbox"><a href="#" class="close-lightbox">&times;</a><img src="images/b01 (3).jpg" alt="Gallery 4 Full"></div> <!-- Updated path -->
-  <div id="img5" class="lightbox"><a href="#" class="close-lightbox">&times;</a><img src="images/td (2).jpg" alt="Gallery 5 Full"></div> <!-- Updated path -->
-  <div id="img6" class="lightbox"><a href="#" class="close-lightbox">&times;</a><img src="images/td (3).jpg" alt="Gallery 6 Full"></div> <!-- Updated path -->
-  <div id="img7" class="lightbox"><a href="#" class="close-lightbox">&times;</a><img src="images/h002.jfif" alt="Gallery 7 Full"></div> <!-- Updated path -->
-  <div id="img8" class="lightbox"><a href="#" class="close-lightbox">&times;</a><img src="images/c001 (1).jpg" alt="Gallery 8 Full"></div> <!-- Updated path -->
+  <div id="img1" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/ct5.jpg" alt="Gallery 1 Full"></div>
+  <div id="img2" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/b01 (1).jpg" alt="Gallery 2 Full"></div>
+  <div id="img3" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/b01 (2).jpg" alt="Gallery 3 Full"></div>
+  <div id="img4" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/b01 (3).jpg" alt="Gallery 4 Full"></div>
+  <div id="img5" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/td (2).jpg" alt="Gallery 5 Full"></div>
+  <div id="img6" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/td (3).jpg" alt="Gallery 6 Full"></div>
+  <div id="img7" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/h002.jfif" alt="Gallery 7 Full"></div>
+  <div id="img8" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/c001 (1).jpg" alt="Gallery 8 Full"></div>
 
-  <script src="js/script.js"></script>
+
+
+  <!-- ✅ Custom inline JavaScript -->
+  <script>
+    document.querySelectorAll('.lightbox').forEach(box => {
+      box.addEventListener('click', function(e) {
+        if (e.target === this) {
+          window.location.hash = '';
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
