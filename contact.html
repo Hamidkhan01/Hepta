@@ -23,6 +23,15 @@
       position: relative;
     }
 
+    html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  background-attachment: fixed;
+}
+
     .hero::before {
       content: '';
       position: absolute;
@@ -160,15 +169,17 @@
     @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    padding: 20px 10px;
+    padding: 20px 15px;
     margin-top: -20px;
   }
 
   .form-container,
   .contact-info {
     width: 100%;
-    padding: 25px 15px;
+    max-width: 500px;
+    padding: 25px 20px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   }
 
@@ -192,6 +203,7 @@
     text-align: center;
   }
 }
+
 
   </style>
 </head>
