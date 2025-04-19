@@ -158,20 +158,42 @@
     }
 
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        gap: 20px;
-      }
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-top: -30px;
+  }
 
-      .form-container,
-      .contact-info {
-        min-width: 100%;
-      }
+  .form-container,
+  .contact-info {
+    min-width: 100%;
+    padding: 25px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
 
-      .back-home {
-        align-self: center;
-      }
-    }
+  .form-container h2,
+  .contact-info h3 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container button {
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .back-home {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
   </style>
 </head>
 <body>
