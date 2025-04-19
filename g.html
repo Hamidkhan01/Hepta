@@ -58,6 +58,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
     }
 
     .gallery-grid img:hover {
@@ -65,12 +66,7 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
-    .gallery-grid a {
-      position: relative;
-      display: block;
-    }
-
-    .gallery-grid a::after {
+    .gallery-grid img::after {
       content: "\1F50D";
       position: absolute;
       bottom: 10px;
@@ -84,7 +80,7 @@
       transition: opacity 0.3s;
     }
 
-    .gallery-grid a:hover::after {
+    .gallery-grid img:hover::after {
       opacity: 1;
     }
 
@@ -104,13 +100,14 @@
       background: #0056b3;
     }
 
+    /* Lightbox Modal */
     .lightbox {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
       display: none;
       align-items: center;
       justify-content: center;
@@ -121,11 +118,7 @@
       max-width: 90%;
       max-height: 80%;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    }
-
-    .lightbox:target {
-      display: flex;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     }
 
     .close-lightbox {
@@ -136,19 +129,45 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2em;
+        font-size: 2.5em;
+        text-align: center;
       }
 
       .gallery-section h2 {
-        font-size: 2em;
+        font-size: 2.2em;
+      }
+
+      .gallery-grid img {
+        height: 160px;
+      }
+
+      .close-lightbox {
+        top: 20px;
+        right: 25px;
+        font-size: 1.5em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
       }
 
       .gallery-grid img {
         height: 180px;
+      }
+
+      .hero {
+        height: 180px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
       }
     }
   </style>
@@ -162,41 +181,40 @@
   <section class="gallery-section">
     <h2>Memories Captured</h2>
     <div class="gallery-grid">
-      <a href="#img1"><img src="images/ct5.jpg" alt="Gallery 1"></a> 
-      <a href="#img2"><img src="images/b01 (1).jpg" alt="Gallery 2"></a> 
-      <a href="#img3"><img src="images/b01 (2).jpg" alt="Gallery 3"></a> 
-      <a href="#img4"><img src="images/b01 (3).jpg" alt="Gallery 4"></a> 
-      <a href="#img5"><img src="images/td (2).jpg" alt="Gallery 5"></a> 
-      <a href="#img6"><img src="images/td (3).jpg" alt="Gallery 6"></a> 
-      <a href="#img7"><img src="images/h002.jfif" alt="Gallery 7"></a> 
-      <a href="#img8"><img src="images/c001 (1).jpg" alt="Gallery 8"></a> 
+      <img src="images/ct5.jpg" alt="Gallery 1" onclick="openLightbox(this.src)">
+      <img src="images/b01 (1).jpg" alt="Gallery 2" onclick="openLightbox(this.src)">
+      <img src="images/b01 (2).jpg" alt="Gallery 3" onclick="openLightbox(this.src)">
+      <img src="images/b01 (3).jpg" alt="Gallery 4" onclick="openLightbox(this.src)">
+      <img src="images/td (2).jpg" alt="Gallery 5" onclick="openLightbox(this.src)">
+      <img src="images/td (3).jpg" alt="Gallery 6" onclick="openLightbox(this.src)">
+      <img src="images/h002.jfif" alt="Gallery 7" onclick="openLightbox(this.src)">
+      <img src="images/c001 (1).jpg" alt="Gallery 8" onclick="openLightbox(this.src)">
     </div>
-
     <a href="index.html" class="back-home">← Back to Home</a>
   </section>
 
-  <!-- Lightbox Overlays -->
-  <div id="img1" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/ct5.jpg" alt="Gallery 1 Full"></div>
-  <div id="img2" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/b01 (1).jpg" alt="Gallery 2 Full"></div>
-  <div id="img3" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/b01 (2).jpg" alt="Gallery 3 Full"></div>
-  <div id="img4" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/b01 (3).jpg" alt="Gallery 4 Full"></div>
-  <div id="img5" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/td (2).jpg" alt="Gallery 5 Full"></div>
-  <div id="img6" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/td (3).jpg" alt="Gallery 6 Full"></div>
-  <div id="img7" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/h002.jfif" alt="Gallery 7 Full"></div>
-  <div id="img8" class="lightbox"><a href="#" class="close-lightbox" onclick="window.location.hash=''; return false;">&times;</a><img src="images/c001 (1).jpg" alt="Gallery 8 Full"></div>
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Full Image">
+  </div>
 
-
-
-  <!-- ✅ Custom inline JavaScript -->
+  <!-- Inline JavaScript -->
   <script>
-    document.querySelectorAll('.lightbox').forEach(box => {
-      box.addEventListener('click', function(e) {
-        if (e.target === this) {
-          window.location.hash = '';
-        }
-      });
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+      document.getElementById("lightbox-img").src = "";
+    }
+
+    // Close when clicking outside the image
+    document.getElementById("lightbox").addEventListener("click", function (e) {
+      if (e.target === this) closeLightbox();
     });
   </script>
-
 </body>
 </html>
