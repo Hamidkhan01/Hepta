@@ -193,6 +193,29 @@ html {
   box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .image-box,
+  .text-box {
+    width: 100%;
+    max-height: none;
+  }
+
+  .text-box {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
 /* Experience Section */
 .experience-section {
   background: rgb(167, 218, 238);
