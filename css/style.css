@@ -160,9 +160,22 @@ html {
 
 .image-box img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .image-box {
+    max-height: none;
+  }
+
+  .image-box img {
+    object-fit: contain;
+  }
 }
 
 
