@@ -26,6 +26,14 @@
       background-attachment: fixed;
     }
 
+    html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  background-attachment: fixed;
+}
     .hero::before {
       content: '';
       position: absolute;
@@ -137,7 +145,7 @@
     }
 
     .back-home {
-      display: inline-block;
+      align-self: center;
       margin-top: 20px;
       padding: 12px 25px;
       background: #00aaff;
