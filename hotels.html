@@ -24,6 +24,8 @@
         html {
   scroll-behavior: smooth;
 }
+
+
 .hero {
   background: url('/Hepta/images/001.jpg') no-repeat center center/cover;
   height: 80vh;
@@ -139,104 +141,78 @@
   }
 }
 
-    .gallery-section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 40px 20px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+
+/* Experience Section */
+.experience-section {
+  background: rgb(255, 255, 255);
+  padding: 70px 20px;
+}
+
+.experience-container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.experience-container h2 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.exp-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.exp-item:hover {
+  transform: translateY(-5px);
+}
+
+.exp-item img {
+  width: 50px;
+  margin-bottom: 12px;
+}
+
+.exp-item h3 {
+  font-size: 1.15rem;
+  color: #1a1a1a;
+  margin: 10px 0 6px;
+}
+
+.exp-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.big-img img {
+  width: 70px;
+}
 
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    .gallery-grid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-
-    /* Lightbox Modal */
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-    }
-
-    .close-lightbox {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      font-size: 2em;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5em;
-        text-align: center;
-      }
-
-      .gallery-section h2 {
-        font-size: 2.2em;
-      }
-
-      .gallery-grid img {
-        height: 160px;
-      }
-
-      .close-lightbox {
-        top: 20px;
-        right: 25px;
-        font-size: 1.5em;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid img {
-        height: 180px;
-      }
-    }
-
-
-    .footer-section {
+.footer-section {
   background: #1d3557;
   color: #fff;
   padding: 50px 20px 20px;
@@ -311,22 +287,24 @@
   color: #a8dadc;
 }
 
-  </style>
+</style>
 </head>
+
+
 <body>
   <div id="top"></div>
 
-  <div class="hero" id="gallery">
+  <div class="hero" id="home">
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <div class="logo">Hepta</div>
-    <h1>Gallery</h1>
+    <h1>Our Hotels</h1>
     <p>
         A free template by 
-        <a href="g.html" class="colorlib-link" onclick="delayedReload(event)">Colorlib</a>. 
+        <a href="hotels.html" class="colorlib-link" onclick="delayedReload(event)">Colorlib</a>. 
         Download and share!
         </p>
   </div>
-
+  
   <div class="overlay" id="menuOverlay">
     <div class="close-icon" onclick="toggleMenu()">&#10005;</div>
     <a href="index.html">Home</a>
@@ -337,24 +315,50 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <section class="gallery-section">
-    <div class="gallery-grid">
-      <img src="images/ct5.jpg" alt="Gallery 1" onclick="openLightbox(this.src)">
-      <img src="images/b01 (1).jpg" alt="Gallery 2" onclick="openLightbox(this.src)">
-      <img src="images/b01 (2).jpg" alt="Gallery 3" onclick="openLightbox(this.src)">
-      <img src="images/b01 (3).jpg" alt="Gallery 4" onclick="openLightbox(this.src)">
-      <img src="images/td (2).jpg" alt="Gallery 5" onclick="openLightbox(this.src)">
-      <img src="images/td (3).jpg" alt="Gallery 6" onclick="openLightbox(this.src)">
-      <img src="images/h002.jfif" alt="Gallery 7" onclick="openLightbox(this.src)">
-      <img src="images/c001 (1).jpg" alt="Gallery 8" onclick="openLightbox(this.src)">
+  <section class="experience-section">
+    <div class="experience-container">
+    
+    
+    <div class="experience-grid">
+      <div class="exp-item">
+        <img src="images/fast-food_737967.png" alt="Good Foods">
+        <h3>Good Foods</h3>
+        <p><p>Far far away, behind the word mountains, far<br>
+          from the countries Vokalia and Consonantia,<br>there live the blind texts.</p></p>
+      </div>
+      <div class="exp-item">
+        <img src="images/airplane_2200326.png" alt="Travel Anywhere">
+        <h3>Travel Anywhere</h3>
+        <p>Far far away, behind the word mountains, far<br>
+          from the countries Vokalia and Consonantia,<br>there live the blind texts.</p>
+      </div>
+      <div class="exp-item">
+        <img src="images/plane_1044134.png" alt="Airplane">
+        <h3>Airplane</h3>
+        <p>Far far away, behind the word mountains, far<br>
+          from the countries Vokalia and Consonantia,<br>there live the blind texts.</p>
+      </div>
+      <div class="exp-item">
+        <img src="images/br.png" alt="Beach Resort">
+        <h3>Beach Resort</h3>
+        <p>Far far away, behind the word mountains, far<br>
+          from the countries Vokalia and Consonantia,<br>there live the blind texts.</p>
+      </div>
+      <div class="exp-item big-img">
+        <img src="images/mc1.png" alt="Mountain Climbing">
+        <h3>Mountain Climbing</h3>
+        <p>Far far away, behind the word mountains, far<br>
+          from the countries Vokalia and Consonantia,<br>there live the blind texts.</p>
+      </div>
+      <div class="exp-item">
+        <img src="images/hab.png" alt="Hot Air Balloon">
+        <h3>Hot Air Balloon</h3>
+        <p>Far far away, behind the word mountains, far<br>
+          from the countries Vokalia and Consonantia,<br>there live the blind texts.</p>
+      </div>
     </div>
-  </section>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="Full Image">
-  </div>
+    </div>
+    </section>
 
 
   <footer class="footer-section">
@@ -396,25 +400,18 @@
       <p>Copyright © 2025 All rights reserved | Made with heart by Ezitech Intern ( Hamid Khan )</p>
     </div>
   </footer>
+  
+  
 
-  <script>
-function toggleMenu() {
+<script>
+   function toggleMenu() {
   const overlay = document.getElementById('menuOverlay');
   overlay.classList.toggle('active');
 }
+</script>
 
 
-    // Open Lightbox
-    function openLightbox(src) {
-      document.getElementById('lightbox').style.display = 'flex';
-      document.getElementById('lightbox-img').src = src;
-    }
 
-    // Close Lightbox
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-    }
-  </script>
 
 </body>
 </html>
