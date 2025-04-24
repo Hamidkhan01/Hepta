@@ -10,6 +10,16 @@ html {
   scroll-behavior: smooth;
 }
 
+.colorlib-link {
+  color: grey;
+  text-decoration: none;
+  transition: color 1s ease;
+}
+
+.colorlib-link:hover {
+  color: darkgray;
+  text-decoration: underline;
+}
 
 .hero {
   background: url('/Hepta/images/Bs01.jpg') no-repeat center center/cover;
@@ -22,7 +32,26 @@ html {
   position: relative;
   text-align: center;
   padding: 0 20px;
+  z-index: 1;
+  overflow: hidden;
 }
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2); 
+  z-index: -1; 
+}
+
+
+
+
+
+
 
 .hero h1 {
   font-size: 60px;
@@ -34,6 +63,8 @@ html {
   margin-top: 10px;
   font-size: 20px;
   color: #ffffff;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+
 }
 
 .hero a.button {
