@@ -47,21 +47,21 @@ html {
   z-index: -1; /* Behind the text */
 }
 
-/* Ensure the overlay always works on mobile */
+/* Overlay that covers the full viewport */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Darker overlay for mobile */
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay on both desktop and mobile */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transform: translateY(-100%);
   transition: transform 0.5s ease;
-  z-index: 1000;
+  z-index: 1000; /* Ensure overlay is on top */
 }
 
 /* Show overlay when active */
@@ -72,7 +72,7 @@ html {
 .overlay a {
   font-size: 30px;
   margin: 15px 0;
-  color: white; /* White text for better contrast */
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }
@@ -85,32 +85,34 @@ html {
   cursor: pointer;
 }
 
-/* ✅ Responsive Design */
+/* ✅ Responsive Design: Adjustments for Mobile */
 @media (max-width: 768px) {
   .hero {
     padding: 0 10px; /* Adjust padding for mobile */
   }
 
   .hero h1 {
-    font-size: 40px;
+    font-size: 40px; /* Smaller heading on mobile */
   }
 
   .hero p {
-    font-size: 16px;
+    font-size: 16px; /* Adjust paragraph size on mobile */
   }
 
   .hero a.button {
-    padding: 8px 16px;
+    padding: 8px 16px; /* Button size adjustment */
   }
 
+  /* Ensure overlay background is dark and covers the screen */
   .overlay {
-    background: rgba(0, 0, 0, 0.5); /* Darker overlay on mobile */
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay for better visibility on mobile */
   }
 
   .overlay a {
-    font-size: 24px;
+    font-size: 24px; /* Adjust link font size on mobile */
   }
 }
+
 
 
 .welcome-section {
