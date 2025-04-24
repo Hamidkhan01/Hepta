@@ -301,3 +301,91 @@
 
 </body>
 </html>
+
+
+
+<section class="team-section">
+  <h2 class="team-title">Meet Our Team</h2>
+  <div class="team-grid">
+    <div class="team-member">
+      <img src="images/h003.jfif" alt="Ali Khan">
+      <h3>Hamid Khan</h3>
+      <p class="role">Founder & CEO</p>
+      <p>Hamid leads Hepta with a vision to explore the world through unique, unforgettable tours.</p>
+    </div>
+    <div class="team-member">
+      <img src="images/ct5.jpg" alt="Sara Ahmed">
+      <h3>Sara Ahmed</h3>
+      <p class="role">Tour Manager</p>
+      <p>Expert in curating smooth, exciting travel experiences for groups and individuals alike.</p>
+    </div>
+    <div class="team-member">
+      <img src="images/ct6 (2).jpg" alt="Usman Tariq">
+      <h3>Usman Tariq</h3>
+      <p class="role">Travel Consultant</p>
+      <p>Helps clients pick perfect destinations and travel plans with expert knowledge and care.</p>
+    </div>
+  </div>
+</section>
+
+
+.team-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 2.4em;
+  margin-bottom: 40px;
+  color: #007bff;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.team-member {
+  flex: 1;
+  background: #e0f7fa;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.team-member img {
+width: 160px;
+height: 160px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 15px;
+border: 3px solid rgb(10, 10, 10);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.team-member h3 {
+  margin: 10px 0 5px;
+  font-size: 1.4em;
+  color: #222;
+}
+
+.team-member .role {
+  font-size: 1em;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.team-member p {
+  font-size: 0.95em;
+  color: #666;
+}

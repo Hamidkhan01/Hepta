@@ -154,100 +154,228 @@
 }
 
 
+.travel-intro {
+  padding: 70px 20px; /* Increased padding for more height */
+  background-color: #fff;
+}
 
-  
+.travel-intro .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px; /* Reduced gap between image and text */
+  min-height: 500px; /* Set min height to make the box taller */
+}
 
-    .team-section {
-      margin-top: 60px;
-      text-align: center;
-    }
+.image-box {
+  flex: 1 1 50%;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .team-title {
-      font-size: 2.4em;
-      margin-bottom: 40px;
-      color: #007bff;
-    }
-
-    .team-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: nowrap;
-    }
-
-    .team-member {
-      flex: 1;
-      background: #e0f7fa;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s;
-    }
-
-    .team-member:hover {
-      transform: translateY(-10px);
-    }
-
-    .team-member img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+.image-box img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-box {
+  flex: 1 1 45%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px; /* Added padding for spacing */
+}
+
+.text-box h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.text-box p {
+  color: #555;
+  line-height: 1.6;
   margin-bottom: 15px;
-  border: 3px solid rgb(10, 10, 10);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 14px; /* Smaller button */
+  font-size: 0.85rem; /* Smaller text */
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .travel-intro .container {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .image-box,
+  .text-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .image-box img {
+    height: auto;
+    object-fit: contain;
+  }
 }
 
 
-    .team-member h3 {
-      margin: 10px 0 5px;
-      font-size: 1.4em;
-      color: #222;
-    }
 
-    .team-member .role {
-      font-size: 1em;
-      color: #007bff;
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-align: center;
-    }
+.carousel-section, .blog-section {
+  padding: 60px 20px;
+  text-align: center;
+}
 
-    .team-member p {
-      font-size: 0.95em;
-      color: #666;
-    }
+.carousel-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
 
-    .back-home {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 10px 25px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s;
-    }
+.carousel-container {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+}
 
-    .back-home:hover {
-      background: #0056b3;
-    }
+.carousel-slide {
+  flex: 0 0 100%;
+}
 
-    @media (max-width: 992px) {
-      .team-grid {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-      }
+.carousel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
 
-      .team-member {
-        min-width: 300px;
-        flex-shrink: 0;
-      }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 1.8rem;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
 
-      .container p {
-        text-align: center;
-      }
-    }
+.carousel-btn.left {
+  left: 12px;
+}
+
+.carousel-btn.right {
+  right: 12px;
+}
+  
+
+.team-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.team-header p {
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.team-member {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  width: 100%;
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.team-info {
+  padding: 15px;
+}
+
+.team-info small {
+  font-size: 0.75rem;
+  color: #999;
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.team-info h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Mobile - 1 per row */
+@media (max-width: 767px) {
+  .team-member {
+    max-width: 100%;
+  }
+}
+
+/* Tablet - 2 per row */
+@media (min-width: 768px) and (max-width: 991px) {
+  .team-member {
+    max-width: calc(50% - 15px);
+  }
+}
+
+/* Desktop - 3 per row */
+@media (min-width: 992px) {
+  .team-member {
+    max-width: calc(33.333% - 20px);
+  }
+}
+
+
 
 
     .footer-section {
@@ -350,34 +478,119 @@
     <a href="contact.html">Contact</a>
   </div>
 
- 
+  <section class="travel-intro">
+    <div class="container">
+      <div class="image-box">
+        <img src="images/Bs01.jpg" alt="Travel Destination" />
+      </div>
+      <div class="text-box">
+        <h2>Welcome Travel & Tours</h2>
+        <p>
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts. Separated they
+          live in Bookmarksgrove right at the coast of the Semantics, a large
+          language ocean.
+        </p>
+        <p>
+          A small river named Duden flows by their place and supplies it with
+          the necessary regelialia.
+        </p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+  
 
 
-
-    <section class="team-section">
-      <h2 class="team-title">Meet Our Team</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="images/h003.jfif" alt="Ali Khan">
-          <h3>Hamid Khan</h3>
-          <p class="role">Founder & CEO</p>
-          <p>Hamid leads Hepta with a vision to explore the world through unique, unforgettable tours.</p>
+  <section class="carousel-section">
+    <h2>Hotel Gallery</h2>
+    
+    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,<br>
+      there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the<br>
+      Semantics, a large language ocean.</p>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" id="prevBtn">&#10094;</button>
+      <div class="carousel-container" id="carouselContainer">
+        <div class="carousel-slide">
+          <img src="images/w03 N.webp" alt="Image 1">
         </div>
-        <div class="team-member">
-          <img src="images/ct5.jpg" alt="Sara Ahmed">
-          <h3>Sara Ahmed</h3>
-          <p class="role">Tour Manager</p>
-          <p>Expert in curating smooth, exciting travel experiences for groups and individuals alike.</p>
+        <div class="carousel-slide">
+          <img src="images/Bs01.jpg" alt="Image 2">
         </div>
-        <div class="team-member">
-          <img src="images/ct6 (2).jpg" alt="Usman Tariq">
-          <h3>Usman Tariq</h3>
-          <p class="role">Travel Consultant</p>
-          <p>Helps clients pick perfect destinations and travel plans with expert knowledge and care.</p>
+        <div class="carousel-slide">
+          <img src="images/w01 N.webp" alt="Image 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/w02 N.webp" alt="Image 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/w03 N.webp" alt="Image 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/h002.jfif" alt="Image 3">
         </div>
       </div>
-    </section>
+      <button class="carousel-btn right" id="nextBtn">&#10095;</button>
+    </div>
+  </section>
 
+
+  <section class="team-section">
+    <div class="team-header">
+      <h2>Team</h2>
+      <p>
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,<br>
+        there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the<br>
+        Semantics, a large language ocean.
+      </p>
+    </div>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="images/w03 HC.webp" alt="Vince Richardson">
+        <div class="team-info">
+          <small>CEO, CO-FOUNDER</small>
+          <h4>Vince Richardson</h4>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="images/w01 HC.webp" alt="Jean Love">
+        <div class="team-info">
+          <small>CTO, CO-FOUNDER</small>
+          <h4>Jean Love</h4>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="images/w02 HC.webp" alt="Jeff Stark">
+        <div class="team-info">
+          <small>MARKETER, CO-FOUNDER</small>
+          <h4>Jeff Stark</h4>
+        </div>
+      </div>
+      <!-- Repeating Members -->
+      <div class="team-member">
+        <img src="images/w03 HC.webp" alt="Vince Richardson">
+        <div class="team-info">
+          <small>CEO, CO-FOUNDER</small>
+          <h4>Vince Richardson</h4>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="images/w01 HC.webp" alt="Jean Love">
+        <div class="team-info">
+          <small>CTO, CO-FOUNDER</small>
+          <h4>Jean Love</h4>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="images/w02 HC.webp" alt="Jeff Stark">
+        <div class="team-info">
+          <small>MARKETER, CO-FOUNDER</small>
+          <h4>Jeff Stark</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
 
     <footer class="footer-section">
