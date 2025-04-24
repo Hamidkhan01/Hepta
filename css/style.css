@@ -43,18 +43,18 @@ html {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.2); /* Adjust opacity for overlay */
+  background: rgba(0, 0, 0, 0.2); /* Light overlay for desktop */
   z-index: -1; /* Behind the text */
 }
 
-/* Overlay that covers the full viewport */
+/* Overlay covering the full viewport */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Darker overlay on both desktop and mobile */
+  background: rgba(0, 0, 0, 0.3); /* Default overlay darkness */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,16 +103,15 @@ html {
     padding: 8px 16px; /* Button size adjustment */
   }
 
-  /* Ensure overlay background is dark and covers the screen */
+  /* Darker overlay for mobile to enhance text visibility */
   .overlay {
-    background: rgba(0, 0, 0, 0.7); /* Darker overlay for better visibility on mobile */
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
   }
 
   .overlay a {
     font-size: 24px; /* Adjust link font size on mobile */
   }
 }
-
 
 
 .welcome-section {
