@@ -12,7 +12,7 @@ html {
 
 
 .hero {
-  background: url('../Hepta/images/Bs01.jpg') no-repeat center center/cover;
+  background: url('/Hepta/images/Bs01.jpg') no-repeat center center/cover;
   height: 100vh;
   color: white;
   display: flex;
@@ -33,7 +33,7 @@ html {
 .hero p {
   margin-top: 10px;
   font-size: 20px;
-  color: #f0f0f0;
+  color: #ffffff;
 }
 
 .hero a.button {
