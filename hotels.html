@@ -226,6 +226,261 @@
   padding: 0;
 }
 
+
+.rooms-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.room-card {
+  display: flex;
+  align-items: stretch;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.room-card.reversed {
+  flex-direction: row-reverse;
+}
+
+.room-image {
+  flex: 1;
+  min-height: 400px; /* Same image height always */
+  height: 400px; /* Force fixed height */
+  position: relative;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Image fits perfectly */
+}
+
+.room-content {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.room-content h2 {
+  margin-top: 0;
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+.room-content p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.learn-more {
+  display: inline-block;
+  color: #222; /* Text color */
+  background-color: transparent; /* No fill color, just border */
+  padding: 8px 16px;
+  font-size: 14px;
+  text-decoration: none;
+  border: 2px solid #222; /* Here is your visible box */
+  border-radius: 4px; /* Light curve, optional */
+  font-weight: 600;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+
+.learn-more:hover {
+  background-color: #222;
+  color: #fff; /* Text turns white when hover */
+}
+
+
+
+
+
+
+/* Make bottom image touch next top image */
+.rooms-section .room-card + .room-card {
+  margin-top: -10px; /* overlap a little */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .room-card,
+  .room-card.reversed {
+    flex-direction: column;
+  }
+
+  .room-image, .room-content {
+    max-width: 100%;
+  }
+
+  .room-image {
+    min-height: 250px;
+    height: 250px;
+  }
+
+  .rooms-section .room-card + .room-card {
+    margin-top: 0;
+  }
+}
+
+
+.carousel-section, .blog-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 1.8rem;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn.left {
+  left: 12px;
+}
+
+.carousel-btn.right {
+  right: 12px;
+}
+
+
+.blog-section {
+  background-color: #72c1bb;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 36px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: #e3f6f5;
+  line-height: 1.8;
+  margin-bottom: 50px;
+}
+
+.blog-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.blog-card {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  color: #333;
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.date {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .carousel-slide img {
+    height: 250px;
+  }
+
+  .carousel-btn {
+    font-size: 1.6rem;
+    padding: 6px 10px;
+  }
+
+  .blog-section h2 {
+    font-size: 2rem;
+  }
+
+
+  .blog-card p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
 .footer-section {
   background: #1d3557;
   color: #fff;
@@ -375,6 +630,107 @@
     </section>
 
 
+    <section class="rooms-section">
+      <div class="room-card">
+        <div class="room-image">
+          <img src="images/Bs01.jpg" alt="Family Room">
+        </div>
+        <div class="room-content">
+          <h2>Family Room</h2>
+          <p>Far far away, behind the word mountains, far from the countries Voidala and Concoruntia, there live the blind texts. Separated they live in Bookmarkogrove right at the coast of the Semantics, a large language ocean.</p>
+          <p>A small river named Duden flows by their place and supplies it with the necessary regoliths.</p>
+          <a href="#" class="learn-more">LEARN MORE</a>
+        </div>
+      </div>
+      
+      <div class="room-card reversed">
+        <div class="room-image">
+          <img src="images/w01 N.webp" alt="Presidential Room">
+        </div>
+        <div class="room-content">
+          <h2>Presidential Room</h2>
+          <p>Far far away, behind the word mountains, far from the countries Voidala and Concoruntia, there live the blind texts. Separated they live in Bookmarkogrove right at the coast of the Semantics, a large language ocean.</p>
+          <p>A small river named Duden flows by their place and supplies it with the necessary regoliths.</p>
+          <a href="#" class="learn-more">LEARN MORE</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="carousel-section">
+      <h2>Hotel Gallery</h2>
+      
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dolor, iusto doloremque quo<br>
+         odio repudiandae sunt eveniet? Enim facilis laborum voluptate id porro, culpa maiores<br>
+         quis, blanditiis laboriosam alias. Sed.</p>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn left" id="prevBtn">&#10094;</button>
+        <div class="carousel-container" id="carouselContainer">
+          <div class="carousel-slide">
+            <img src="images/w03 N.webp" alt="Image 1">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/Bs01.jpg" alt="Image 2">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/w01 N.webp" alt="Image 3">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/w02 N.webp" alt="Image 3">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/w03 N.webp" alt="Image 3">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/h002.jfif" alt="Image 3">
+          </div>
+        </div>
+        <button class="carousel-btn right" id="nextBtn">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="container">
+        <h2 class="section-title">More Hotel Features</h2>
+      
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dolor, iusto doloremque quo<br>
+           odio repudiandae sunt eveniet? Enim facilis laborum voluptate id porro, culpa maiores<br>
+           quis, blanditiis laboriosam alias. Sed.</p>
+    
+        <div class="blog-cards">
+          <!-- Card 1 -->
+          <div class="blog-card">
+            <img src="images/w04 N.webp" alt="Juice Image">
+            <div class="card-content">
+              <h3>Five Reasons to stay at Villa Resort</h3>
+            </div>
+          </div>
+    
+          <!-- Card 2 -->
+          <div class="blog-cards">
+            <!-- Card 1 -->
+            <div class="blog-card">
+              <img src="images/w03 N.webp" alt="Juice Image">
+              <div class="card-content">
+                <h3>Five Reasons to stay at Villa Resort</h3>
+              </div>
+            </div>
+    
+          <!-- Card 3 -->
+          <div class="blog-cards">
+            <!-- Card 1 -->
+            <div class="blog-card">
+              <img src="images/w05 N.webp" alt="Juice Image">
+              <div class="card-content">
+                <h3>Five Reasons to stay at Villa Resort</h3>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+
+
   <footer class="footer-section">
     <div class="footer-container">
       <div class="footer-box">
@@ -422,6 +778,22 @@
   const overlay = document.getElementById('menuOverlay');
   overlay.classList.toggle('active');
 }
+
+
+const container = document.getElementById("carouselContainer");
+const slides = document.querySelectorAll(".carousel-slide");
+const totalSlides = slides.length;
+let index = 0;
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  index = (index + 1) % totalSlides;
+  container.style.transform = `translateX(-${index * 100}%)`;
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  index = (index - 1 + totalSlides) % totalSlides;
+  container.style.transform = `translateX(-${index * 100}%)`;
+});
 </script>
 
 
