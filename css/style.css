@@ -43,7 +43,7 @@ html {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity here (0.5 = medium dark) */
+  background: rgba(0, 0, 0, 0.2); 
   z-index: -1;
 }
 
@@ -502,11 +502,11 @@ html {
 }
 
 .testimonial-card img {
-  width: 150px; /* Size of the image */
-  height: 150px; /* Make it a perfect circle */
-  object-fit: cover; /* Ensures the image covers the circle without stretching */
-  border-radius: 50%; /* Makes the image circular */
-  margin-bottom: 15px; /* Space between image and text */
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  border-radius: 50%; 
+  margin-bottom: 15px; 
 }
 
 
@@ -529,7 +529,7 @@ html {
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 20px;
-  border: 5px solid #fff; /* White border around image */
+  border: 5px solid #fff; 
 }
 
 .testimonial-card p {
